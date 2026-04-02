@@ -6,13 +6,16 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
